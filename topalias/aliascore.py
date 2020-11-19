@@ -47,7 +47,7 @@ def find_history() -> str:
         logging.debug("History file: %s", history_path)
         return history_path
     print("File {} not found in any of the directories".format(HISTORY_FILE))
-    file_dir = os.path.dirname(os.path.realpath("__file__"))
+    file_dir = os.path.dirname(os.path.realpath(__file__))
     if HISTORY_FILE == ".zsh_history":
         data_path = os.path.join(file_dir, r"topalias/data/.zsh_history")
     else:
