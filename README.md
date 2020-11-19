@@ -74,7 +74,7 @@ topalias --debug history  # only analyze local bash history and print filtered r
 
 Files path search order:
 
--   directory from execution parameter 
+-   directory from execution parameter
 -   .bash_history in . current directory
 -   .bash_history in ~ user home directory
 -   example development files in topalias/data
