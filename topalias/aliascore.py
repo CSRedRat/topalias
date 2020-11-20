@@ -47,15 +47,15 @@ def find_first(filename: str, paths: list) -> str:  # type: ignore
     return NOTHING
 
 
-def find_history() -> str:  # pylint: disable=inconsistent-return-statements
+def find_history() -> str:    # pylint: disable=inconsistent-return-statements
     """Find command history file"""
     history_path = find_first(HISTORY_FILE, path)
     if history_path != NOTHING:
         logging.debug("History file: %s", history_path)
         return history_path
     print("File {} not found in any of the directories".format(HISTORY_FILE))
-    file_dir = os.path.dirname(os.path.realpath(__file__))
     if DEBUG:
+        file_dir = os.path.dirname(os.path.realpath(__file__))
         if HISTORY_FILE == ".zsh_history":
             data_path = os.path.join(file_dir, r"data/.zsh_history")
         else:
