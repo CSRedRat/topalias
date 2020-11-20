@@ -4,13 +4,13 @@
 import importlib
 import subprocess
 import sys
-from topalias.aliascore import process_bash_line, process_zsh_line
 
 import pytest
 import requests
 from bs4 import BeautifulSoup
 from click.testing import CliRunner
 from topalias import aliascore, cli
+from topalias.aliascore import process_bash_line, process_zsh_line
 
 
 @pytest.fixture(name="response")
