@@ -47,7 +47,7 @@ def find_first(filename: str, paths: list) -> str:  # type: ignore
     return NOTHING
 
 
-def find_history() -> str:    # pylint: disable=inconsistent-return-statements
+def find_history() -> str:  # pylint: disable=inconsistent-return-statements
     """Find command history file"""
     history_path = find_first(HISTORY_FILE, path)
     if history_path != NOTHING:
