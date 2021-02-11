@@ -59,9 +59,9 @@ def find_history() -> str:  # pylint: disable=inconsistent-return-statements
     if DEBUG:
         file_dir = os.path.dirname(os.path.realpath(__file__))
         if HISTORY_FILE == ".zsh_history":
-            data_path = os.path.join(file_dir, r"data/.zsh_history")
+            data_path = os.path.join(file_dir, "data/.zsh_history")
         else:
-            data_path = os.path.join(file_dir, r"data/.bash_history")
+            data_path = os.path.join(file_dir, "data/.bash_history")
         logging.debug("History file: %s", data_path)
         return data_path
 
@@ -75,7 +75,7 @@ def find_aliases() -> str:  # pylint: disable=inconsistent-return-statements
     print("File {} not found in any of the directories ".format(aliases_name))
     if DEBUG:
         file_dir = os.path.dirname(os.path.realpath(__file__))
-        return os.path.join(file_dir, r"data/.bash_aliases")
+        return os.path.join(file_dir, "data/.bash_aliases")
 
 
 used_alias = []
@@ -217,7 +217,7 @@ def load_command_bank(filtering=False):  # pylint: disable=too-many-branches
     history_file_path = find_history()
     multiline_buffer = []
     try:
-        with io.FileIO(r"{}".format(history_file_path), "r") as history_data:
+        with io.FileIO("{}".format(history_file_path), "r") as history_data:
             history_data_encoded = io.TextIOWrapper(
                 history_data,
                 encoding="UTF-8",

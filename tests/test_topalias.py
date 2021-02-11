@@ -13,8 +13,6 @@ from click.testing import CliRunner
 
 from topalias import aliascore
 from topalias import cli
-from topalias.aliascore import process_bash_line
-from topalias.aliascore import process_zsh_line
 
 
 @pytest.fixture(name="response")
@@ -89,11 +87,11 @@ def test_process_bash_line():
     """ test process_bash_line """
     line1 = "#1602983983"
     line2 = "sudo chown -R csredrat:csredrat ."
-    assert process_bash_line(line1) is None
-    assert process_bash_line(line2) == line2
+    assert aliascore.process_bash_line(line1) is None
+    assert aliascore.process_bash_line(line2) == line2
 
 
 def test_process_zsh_line():
     """ test process_zsh_line """
     line1 = ": 1605767719:0;pip3 install -U --user topalias"
-    assert process_zsh_line(line1) == "pip3 install -U --user topalias"
+    assert aliascore.process_zsh_line(line1) == "pip3 install -U --user topalias"
