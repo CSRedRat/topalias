@@ -58,7 +58,7 @@ safety = "^1.9"
 pytest = "^6.1"
 pytest-cov = "^2.10"
 pytest-randomly = "^3.4"
-coverage = "^5.3"
+coverage = "^5.4"
 
 sphinx = "^3.4"
 sphinx-autodoc-typehints = "^1.11"
