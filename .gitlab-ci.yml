@@ -20,10 +20,10 @@ build:
         - pip install -r requirements.txt
         - pip install -r requirements-dev.txt
         - python setup.py sdist bdist_wheel
-        - pip install dist/*
+        - pip install dist/*.whl
     artifacts:
         paths:
-            - dist/*.whl
+            - dist/*
         expire_in: 1 week
     tags:
         - docker
