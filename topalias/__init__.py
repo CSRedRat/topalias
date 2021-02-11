@@ -3,7 +3,7 @@
 
 __author__ = "Sergey Chudakov"
 __email__ = "csredrat@gmail.com"
-__version__ = "2.0.14"
+__version__ = "2.0.15"
 
 import os
 import sys
