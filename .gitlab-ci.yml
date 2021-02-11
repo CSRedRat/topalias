@@ -23,7 +23,7 @@ build:
         - pip install dist/*
     artifacts:
         paths:
-            - dist/*
+            - dist/*.whl
         expire_in: 1 week
     tags:
         - docker
