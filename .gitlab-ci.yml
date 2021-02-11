@@ -1,10 +1,10 @@
-image: python:3.8-slim
+image: python:3.9-slim
 
 variables:
     PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
 
 cache:
-    key: one-key-to-rule-them-all
+#    key: one-key-to-rule-them-all
     paths:
         - .cache/pip
         - venv/

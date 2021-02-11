@@ -4,8 +4,10 @@
 
 import sys
 
-import aliascore as core
 import click
+
+import aliascore as core
+
 from __init__ import __version__
 
 

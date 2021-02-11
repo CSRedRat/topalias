@@ -1,6 +1,6 @@
 # How to contribute
 
-topalias developed in PyCharm, pienv (earlier Anaconda) with Python 3.8. Package will run on Python 3.6-3.9.
+topalias developed in PyCharm, poetry (earlier Anaconda and pipenv) with Python 3.9 (early 3.8). Package will run on Python 3.5-3.9.
 
 ## Dependencies
 
@@ -17,15 +17,7 @@ pre-commit install -t pre-commit
 pre-commit install -t pre-push
 ```
 
-If you use conda:
-
-```bash
-conda install --yes --file requirements-dev.txt
-conda install --yes --file requirements.txt
-conda install -c conda-forge pre-commit  # work only in Linux
-```
-
-You can use [poetry](https://github.com/python-poetry/poetry) to manage the dependencies.
+Use [poetry](https://github.com/python-poetry/poetry) to manage the dependencies.
 
 To install them you would need to run `install` command:
 
@@ -34,6 +26,14 @@ poetry install
 ```
 
 To activate your `virtualenv` run `poetry shell`.
+
+If you use conda:
+
+```bash
+conda install --yes --file requirements-dev.txt
+conda install --yes --file requirements.txt
+conda install -c conda-forge pre-commit  # work only in Linux
+```
 
 You can use [pipfile](https://github.com/pypa/pipfile) to manage the dependencies.
 
