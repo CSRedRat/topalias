@@ -12,7 +12,7 @@ with open("CHANGELOG.md") as history_file:
     history = history_file.read()
 
 requirements = [
-    "Click>=7.0",
+    "Click>=7.1",
 ]
 
 setup_requirements = [
@@ -28,7 +28,8 @@ setup(
     author_email="csredrat@gmail.com",
     python_requires=">=3.5",
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Console",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         "Natural Language :: English",
@@ -52,7 +53,7 @@ setup(
     long_description=readme + "\n\n" + history,
     long_description_content_type="text/markdown",
     include_package_data=True,
-    keywords="topalias top bash zsh alias aliases linux python shell cli console terminal utility tool history sysadmin devops",  # pylint: disable=line-too-long
+    keywords="top bash zsh alias aliases linux python shell cli console terminal utility tool history sysadmin",
     name="topalias",
     packages=find_packages(include=["topalias", "topalias.*"]),
     setup_requires=setup_requirements,

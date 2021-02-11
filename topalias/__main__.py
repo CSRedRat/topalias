@@ -4,6 +4,7 @@
 import aliascore
 import cli
 
+
 if __name__ == "__main__":
     aliascore.welcome("start as module: python -m topalias")
     cli.cli()  # pylint: disable=no-value-for-parameter

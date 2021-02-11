@@ -8,7 +8,9 @@ import random
 import re
 import sys
 
-from statistic import most_used_utils, top_command
+from statistic import most_used_utils
+from statistic import top_command
+
 
 NOTHING = "Empty"
 

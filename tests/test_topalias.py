@@ -7,10 +7,14 @@ import sys
 
 import pytest
 import requests
+
 from bs4 import BeautifulSoup
 from click.testing import CliRunner
-from topalias import aliascore, cli
-from topalias.aliascore import process_bash_line, process_zsh_line
+
+from topalias import aliascore
+from topalias import cli
+from topalias.aliascore import process_bash_line
+from topalias.aliascore import process_zsh_line
 
 
 @pytest.fixture(name="response")
