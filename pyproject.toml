@@ -68,7 +68,7 @@ m2r = "^0.2"
 tomlkit = "^0.7.0"
 
 flake8 = "^3.8.4"
-tox = "^3.21.4"
+tox = "^3.22.0"
 pylint = "^2.6.0"
 black = "^20.8b1"
 pre-commit = "^2.10.1"
