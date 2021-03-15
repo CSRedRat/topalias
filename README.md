@@ -82,9 +82,9 @@ You can change dot files search path to another user home directory:
 topalias -f /home/user  # or topalias --path /home/user
 ```
 
-Also you can use topalias utility in [Bash for Git](https://gitforwindows.org/) on Windows and in [WSL](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).
+* Write your [software review](https://github.com/CSRedRat/topalias/wiki) and add you awesome aliases to [Insights topic](https://github.com/CSRedRat/topalias/issues/29) or [.bash_aliases](https://github.com/CSRedRat/topalias/blob/master/topalias/data/.bash_aliases) example.
 
-Add you awesome aliases to [Insights topic](https://github.com/CSRedRat/topalias/issues/29) or [.bash_aliases](https://github.com/CSRedRat/topalias/blob/master/topalias/data/.bash_aliases) example.
+Also you can use topalias utility in [Bash for Git](https://gitforwindows.org) on Windows and in [WSL](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).
 
 ### Documentation
 
@@ -126,6 +126,7 @@ Commands:
 -   command ignore list flag: top, emacs, vim
 -   often used command "ssh username@servername" suggest add to .ssh/config/
 -   find password and other sensitivity data in history and suggest clean (now print "Hint: add space ' ' before sensitive command in terminal for skip save current command in history!")
+-   добавить локализацию на русский язык в зависимости от локали ОС
 
 Please add you feature requests: [https://github.com/CSRedRat/topalias/issues/new](https://github.com/CSRedRat/topalias/issues/new)
 
