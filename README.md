@@ -82,7 +82,7 @@ You can change dot files search path to another user home directory:
 topalias -f /home/user  # or topalias --path /home/user
 ```
 
-* Write your [software review](https://github.com/CSRedRat/topalias/wiki) and add you awesome aliases to [Insights topic](https://github.com/CSRedRat/topalias/issues/29) or [.bash_aliases](https://github.com/CSRedRat/topalias/blob/master/topalias/data/.bash_aliases) example.
+-   Write your [software review](https://github.com/CSRedRat/topalias/wiki) and add you awesome aliases to [Insights topic](https://github.com/CSRedRat/topalias/issues/29) or [.bash_aliases](https://github.com/CSRedRat/topalias/blob/master/topalias/data/.bash_aliases) example.
 
 Also you can use topalias utility in [Bash for Git](https://gitforwindows.org) on Windows and in [WSL](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).
 
