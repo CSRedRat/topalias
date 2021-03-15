@@ -57,6 +57,14 @@ tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)"
 tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six"]
 
 [[package]]
+name = "autorepr"
+version = "0.3.0"
+description = "Makes civilized __repr__, __str__, and __unicode__ methods"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "babel"
 version = "2.9.0"
 description = "Internationalization utilities"
@@ -166,6 +174,17 @@ description = "Cross-platform colored terminal text."
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "configupdater"
+version = "2.0"
+description = "Parser like ConfigParser but for updating configuration files"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+testing = ["sphinx", "flake8", "pytest", "pytest-cov", "pytest-virtualenv", "pytest-xdist"]
 
 [[package]]
 name = "coverage"
@@ -576,6 +595,21 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
+name = "loguru"
+version = "0.5.3"
+description = "Python logging made (stupidly) simple"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+colorama = {version = ">=0.3.4", markers = "sys_platform == \"win32\""}
+win32-setctime = {version = ">=1.0.0", markers = "sys_platform == \"win32\""}
+
+[package.extras]
+dev = ["codecov (>=2.0.15)", "colorama (>=0.3.4)", "flake8 (>=3.7.7)", "tox (>=3.9.0)", "tox-travis (>=0.12)", "pytest (>=4.6.2)", "pytest-cov (>=2.7.1)", "Sphinx (>=2.2.1)", "sphinx-autobuild (>=0.7.1)", "sphinx-rtd-theme (>=0.4.3)", "black (>=19.10b0)", "isort (>=5.1.1)"]
+
+[[package]]
 name = "m2r"
 version = "0.2.1"
 description = "Markdown and reStructuredText in a single file."
@@ -611,7 +645,7 @@ tests = ["pytest", "pytz", "simplejson"]
 
 [[package]]
 name = "marshmallow-polyfield"
-version = "5.9"
+version = "5.10"
 description = "An unofficial extension to Marshmallow to allow for polymorphic fields"
 category = "dev"
 optional = false
@@ -654,33 +688,38 @@ python-versions = "*"
 
 [[package]]
 name = "nitpick"
-version = "0.23.1"
-description = "Flake8 plugin to enforce the same lint configuration (flake8, isort, mypy, pylint) across multiple Python projects"
+version = "0.25.0"
+description = "Enforce the same configuration across multiple projects"
 category = "dev"
 optional = false
-python-versions = ">=3.5,<4.0"
+python-versions = ">=3.6,<4.0"
 
 [package.dependencies]
 attrs = "*"
+autorepr = "*"
 click = "*"
+ConfigUpdater = "*"
 dictdiffer = "*"
 flake8 = ">=3.0.0"
 identify = "*"
 jmespath = "*"
+loguru = "*"
 marshmallow = ">=3.0.0b10"
-marshmallow-polyfield = ">=5.7,<6.0"
+marshmallow-polyfield = ">=5.10,<6.0"
 more-itertools = "*"
 pluggy = "*"
+pydantic = "*"
 python-slugify = "*"
 requests = "*"
 "ruamel.yaml" = "*"
 sortedcontainers = "*"
 toml = "*"
+tomlkit = "*"
 
 [package.extras]
 lint = ["pylint"]
-test = ["pytest", "responses", "testfixtures"]
-doc = ["sphinx", "sphinx-rtd-theme"]
+test = ["pytest-cov", "pytest", "responses", "testfixtures"]
+doc = ["sphinx", "sphinx-rtd-theme", "sphobjinv"]
 
 [[package]]
 name = "nodeenv"
@@ -770,6 +809,21 @@ description = "Python style guide checker"
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
+name = "pydantic"
+version = "1.8.1"
+description = "Data validation and settings management using python 3.6 type hinting"
+category = "dev"
+optional = false
+python-versions = ">=3.6.1"
+
+[package.dependencies]
+typing-extensions = ">=3.7.4.3"
+
+[package.extras]
+dotenv = ["python-dotenv (>=0.10.4)"]
+email = ["email-validator (>=1.0.3)"]
 
 [[package]]
 name = "pydocstyle"
@@ -1276,6 +1330,17 @@ pygments = ">=2.4,<3.0"
 typing_extensions = ">=3.6,<4.0"
 
 [[package]]
+name = "win32-setctime"
+version = "1.0.3"
+description = "A small Python utility to set file creation time on Windows"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
+
+[[package]]
 name = "wrapt"
 version = "1.12.1"
 description = "Module for decorators, wrappers and monkey patching."
@@ -1312,6 +1377,11 @@ atomicwrites = [
 attrs = [
     {file = "attrs-20.3.0-py2.py3-none-any.whl", hash = "sha256:31b2eced602aa8423c2aea9c76a724617ed67cf9513173fd3a4f03e3a929c7e6"},
     {file = "attrs-20.3.0.tar.gz", hash = "sha256:832aa3cde19744e49938b91fea06d69ecb9e649c93ba974535d08ad92164f700"},
+]
+autorepr = [
+    {file = "autorepr-0.3.0-py2-none-any.whl", hash = "sha256:c34567e4073630feb52d9c788fc198085e9e9de4817e3b93b7c4c534fc689f11"},
+    {file = "autorepr-0.3.0-py2.py3-none-any.whl", hash = "sha256:1d9010d14fb325d3961e3aa73692685563f97d6ba4a2f0f735329fb37422599c"},
+    {file = "autorepr-0.3.0.tar.gz", hash = "sha256:ef770b84793d5433e6bb893054973b8c7ce6b487274f9c3f734f678cae11e85e"},
 ]
 babel = [
     {file = "Babel-2.9.0-py2.py3-none-any.whl", hash = "sha256:9d35c22fcc79893c3ecc85ac4a56cde1ecf3f19c540bba0922308a6c06ca6fa5"},
@@ -1352,6 +1422,10 @@ click = [
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
+]
+configupdater = [
+    {file = "ConfigUpdater-2.0-py2.py3-none-any.whl", hash = "sha256:bc62bd5141c45a89840a3e82e0a06f23fb2c00de82e2b72c8030cafb4daea9a2"},
+    {file = "ConfigUpdater-2.0.tar.gz", hash = "sha256:6a60447fb25e5cb5036cdd5761287ac5649135a49094bc8bd71d999417483441"},
 ]
 coverage = [
     {file = "coverage-5.5-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:b6d534e4b2ab35c9f93f46229363e17f63c53ad01330df9f2d6bd1187e5eaacf"},
@@ -1562,6 +1636,10 @@ lazy-object-proxy = [
     {file = "lazy_object_proxy-1.4.3-cp38-cp38-win32.whl", hash = "sha256:5541cada25cd173702dbd99f8e22434105456314462326f06dba3e180f203dfd"},
     {file = "lazy_object_proxy-1.4.3-cp38-cp38-win_amd64.whl", hash = "sha256:59f79fef100b09564bc2df42ea2d8d21a64fdcda64979c0fa3db7bdaabaf6239"},
 ]
+loguru = [
+    {file = "loguru-0.5.3-py3-none-any.whl", hash = "sha256:f8087ac396b5ee5f67c963b495d615ebbceac2796379599820e324419d53667c"},
+    {file = "loguru-0.5.3.tar.gz", hash = "sha256:b28e72ac7a98be3d28ad28570299a393dfcd32e5e3f6a353dec94675767b6319"},
+]
 m2r = [
     {file = "m2r-0.2.1.tar.gz", hash = "sha256:bf90bad66cda1164b17e5ba4a037806d2443f2a4d5ddc9f6a5554a0322aaed99"},
 ]
@@ -1624,7 +1702,8 @@ marshmallow = [
     {file = "marshmallow-3.10.0.tar.gz", hash = "sha256:4ab2fdb7f36eb61c3665da67a7ce281c8900db08d72ba6bf0e695828253581f7"},
 ]
 marshmallow-polyfield = [
-    {file = "marshmallow-polyfield-5.9.tar.gz", hash = "sha256:448f4b1ac5cbd671c0fb8a5452e99da7c0e8be924dd2cda2a21ee59457a4748f"},
+    {file = "marshmallow-polyfield-5.10.tar.gz", hash = "sha256:75d0e31b725650e91428f975a66ed30f703cc6f9fcfe45b8436ee6d676921691"},
+    {file = "marshmallow_polyfield-5.10-py3-none-any.whl", hash = "sha256:a0a91730c6d21bfac1563990c7ba1413928e7499af669619d4fb38d1fb25c4e9"},
 ]
 mccabe = [
     {file = "mccabe-0.6.1-py2.py3-none-any.whl", hash = "sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"},
@@ -1643,8 +1722,8 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
 nitpick = [
-    {file = "nitpick-0.23.1-py3-none-any.whl", hash = "sha256:8102a6ae6ebd716cf796a614e37d9bb7f47851bb53f1c1edbf07675143ed55b9"},
-    {file = "nitpick-0.23.1.tar.gz", hash = "sha256:f2293781c1357baa8969ada485e1c60503b1097375a73c1f2a3c988552071e6a"},
+    {file = "nitpick-0.25.0-py3-none-any.whl", hash = "sha256:9b395c7728865352a48d3e6f056255cc3058b4381b0b67b0ea04b2a409715c5b"},
+    {file = "nitpick-0.25.0.tar.gz", hash = "sha256:f5b4fb770f500aecf1e739f876c3dc70143dfc5207b3e991d5a67d739aa8ce9f"},
 ]
 nodeenv = [
     {file = "nodeenv-1.5.0-py2.py3-none-any.whl", hash = "sha256:5304d424c529c997bc888453aeaa6362d242b6b4631e90f3d4bf1b290f1c84a9"},
@@ -1681,6 +1760,30 @@ py = [
 pycodestyle = [
     {file = "pycodestyle-2.6.0-py2.py3-none-any.whl", hash = "sha256:2295e7b2f6b5bd100585ebcb1f616591b652db8a741695b3d8f5d28bdc934367"},
     {file = "pycodestyle-2.6.0.tar.gz", hash = "sha256:c58a7d2815e0e8d7972bf1803331fb0152f867bd89adf8a01dfd55085434192e"},
+]
+pydantic = [
+    {file = "pydantic-1.8.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:0c40162796fc8d0aa744875b60e4dc36834db9f2a25dbf9ba9664b1915a23850"},
+    {file = "pydantic-1.8.1-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:fff29fe54ec419338c522b908154a2efabeee4f483e48990f87e189661f31ce3"},
+    {file = "pydantic-1.8.1-cp36-cp36m-manylinux2014_i686.whl", hash = "sha256:fbfb608febde1afd4743c6822c19060a8dbdd3eb30f98e36061ba4973308059e"},
+    {file = "pydantic-1.8.1-cp36-cp36m-manylinux2014_x86_64.whl", hash = "sha256:eb8ccf12295113ce0de38f80b25f736d62f0a8d87c6b88aca645f168f9c78771"},
+    {file = "pydantic-1.8.1-cp36-cp36m-win_amd64.whl", hash = "sha256:20d42f1be7c7acc352b3d09b0cf505a9fab9deb93125061b376fbe1f06a5459f"},
+    {file = "pydantic-1.8.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:dde4ca368e82791de97c2ec019681ffb437728090c0ff0c3852708cf923e0c7d"},
+    {file = "pydantic-1.8.1-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:3bbd023c981cbe26e6e21c8d2ce78485f85c2e77f7bab5ec15b7d2a1f491918f"},
+    {file = "pydantic-1.8.1-cp37-cp37m-manylinux2014_i686.whl", hash = "sha256:830ef1a148012b640186bf4d9789a206c56071ff38f2460a32ae67ca21880eb8"},
+    {file = "pydantic-1.8.1-cp37-cp37m-manylinux2014_x86_64.whl", hash = "sha256:fb77f7a7e111db1832ae3f8f44203691e15b1fa7e5a1cb9691d4e2659aee41c4"},
+    {file = "pydantic-1.8.1-cp37-cp37m-win_amd64.whl", hash = "sha256:3bcb9d7e1f9849a6bdbd027aabb3a06414abd6068cb3b21c49427956cce5038a"},
+    {file = "pydantic-1.8.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:2287ebff0018eec3cc69b1d09d4b7cebf277726fa1bd96b45806283c1d808683"},
+    {file = "pydantic-1.8.1-cp38-cp38-manylinux1_i686.whl", hash = "sha256:4bbc47cf7925c86a345d03b07086696ed916c7663cb76aa409edaa54546e53e2"},
+    {file = "pydantic-1.8.1-cp38-cp38-manylinux2014_i686.whl", hash = "sha256:6388ef4ef1435364c8cc9a8192238aed030595e873d8462447ccef2e17387125"},
+    {file = "pydantic-1.8.1-cp38-cp38-manylinux2014_x86_64.whl", hash = "sha256:dd4888b300769ecec194ca8f2699415f5f7760365ddbe243d4fd6581485fa5f0"},
+    {file = "pydantic-1.8.1-cp38-cp38-win_amd64.whl", hash = "sha256:8fbb677e4e89c8ab3d450df7b1d9caed23f254072e8597c33279460eeae59b99"},
+    {file = "pydantic-1.8.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:2f2736d9a996b976cfdfe52455ad27462308c9d3d0ae21a2aa8b4cd1a78f47b9"},
+    {file = "pydantic-1.8.1-cp39-cp39-manylinux1_i686.whl", hash = "sha256:3114d74329873af0a0e8004627f5389f3bb27f956b965ddd3e355fe984a1789c"},
+    {file = "pydantic-1.8.1-cp39-cp39-manylinux2014_i686.whl", hash = "sha256:258576f2d997ee4573469633592e8b99aa13bda182fcc28e875f866016c8e07e"},
+    {file = "pydantic-1.8.1-cp39-cp39-manylinux2014_x86_64.whl", hash = "sha256:c17a0b35c854049e67c68b48d55e026c84f35593c66d69b278b8b49e2484346f"},
+    {file = "pydantic-1.8.1-cp39-cp39-win_amd64.whl", hash = "sha256:e8bc082afef97c5fd3903d05c6f7bb3a6af9fc18631b4cc9fedeb4720efb0c58"},
+    {file = "pydantic-1.8.1-py3-none-any.whl", hash = "sha256:e3f8790c47ac42549dc8b045a67b0ca371c7f66e73040d0197ce6172b385e520"},
+    {file = "pydantic-1.8.1.tar.gz", hash = "sha256:26cf3cb2e68ec6c0cfcb6293e69fb3450c5fd1ace87f46b64f678b0d29eac4c3"},
 ]
 pydocstyle = [
     {file = "pydocstyle-5.1.1-py3-none-any.whl", hash = "sha256:aca749e190a01726a4fb472dd4ef23b5c9da7b9205c0a7857c06533de13fd678"},
@@ -1938,6 +2041,10 @@ webencodings = [
 wemake-python-styleguide = [
     {file = "wemake-python-styleguide-0.15.0.tar.gz", hash = "sha256:c8a3f426cd621f03fb3cc41cbd6754548d1db49bef245bc9a589c20dbff81aff"},
     {file = "wemake_python_styleguide-0.15.0-py3-none-any.whl", hash = "sha256:3911a78c3475ab388da45c6291ac4130e4b862d807666aaa3997b2e833da6db8"},
+]
+win32-setctime = [
+    {file = "win32_setctime-1.0.3-py3-none-any.whl", hash = "sha256:dc925662de0a6eb987f0b01f599c01a8236cb8c62831c22d9cada09ad958243e"},
+    {file = "win32_setctime-1.0.3.tar.gz", hash = "sha256:4e88556c32fdf47f64165a2180ba4552f8bb32c1103a2fafd05723a0bd42bd4b"},
 ]
 wrapt = [
     {file = "wrapt-1.12.1.tar.gz", hash = "sha256:b62ffa81fb85f4332a4f609cab4ac40709470da05643a082ec1eb88e6d9b97d7"},
