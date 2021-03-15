@@ -804,11 +804,11 @@
         },
         "twine": {
             "hashes": [
-                "sha256:2f6942ec2a17417e19d2dd372fc4faa424c87ee9ce49b4e20c427eb00a0f3f41",
-                "sha256:fcffa8fc37e8083a5be0728371f299598870ee1eccc94e9a25cef7b1dcfa8297"
+                "sha256:101f1c43ea4587ab19261d09157c63b6f37a0e55b215f0dd26304df1d49b620c",
+                "sha256:d12a873ab5db3e21f3fd393a82776401cc43a4966677466088abcb796aefafe2"
             ],
             "index": "pypi",
-            "version": "==3.3.0"
+            "version": "==3.4.0"
         },
         "typed-ast": {
             "hashes": [
