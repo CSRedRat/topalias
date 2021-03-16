@@ -1,6 +1,9 @@
 name: Publish Python 🐍 distributions 📦 to TestPyPI
 
-on: push
+on:
+  push:
+    branches-ignore:
+      - 'dependabot/*'
 
 jobs:
     build-n-publish:
