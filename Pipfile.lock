@@ -792,11 +792,11 @@
         },
         "tox": {
             "hashes": [
-                "sha256:65d0e90ceb816638a50d64f4b47b11da767b284c0addda2294cb3cd69bd72425",
-                "sha256:cf7fef81a3a2434df4d7af2a6d1bf606d2970220addfbe7dea2615bd4bb2c252"
+                "sha256:05a4dbd5e4d3d8269b72b55600f0b0303e2eb47ad5c6fe76d3576f4c58d93661",
+                "sha256:e007673f3595cede9b17a7c4962389e4305d4a3682a6c5a4159a1453b4f326aa"
             ],
             "index": "pypi",
-            "version": "==3.21.4"
+            "version": "==3.23.0"
         },
         "tqdm": {
             "hashes": [
