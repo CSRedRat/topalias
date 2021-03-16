@@ -3,7 +3,7 @@
 # default
 alias psgrep='ps aux | egrep -i $1' # process search
 alias hh='history | egrep -i' # search in history
-alias upd='sudo apt update && sudo apt full-upgrade -y && sudo apt dist-upgrade -y' # update system to latest packages in release
+alias upd='sudo apt update && sudo apt full-upgrade -y' # update system to latest packages in release
 
 # grc colored
 alias cvs='grc --colour=auto cvs'
