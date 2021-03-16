@@ -4,6 +4,7 @@
 alias psgrep='ps aux | egrep -i $1' # process search
 alias hh='history | egrep -i' # search in history
 alias upd='sudo apt update && sudo apt full-upgrade -y' # update system to latest packages in release
+alias grep='grep -i --color=auto'
 
 # grc colored
 alias cvs='grc --colour=auto cvs'
@@ -18,9 +19,19 @@ alias ping='grc --colour=auto ping'
 alias proftpd='grc --colour=auto proftpd'
 alias traceroute='grc --colour=auto traceroute'
 alias wdiff='grc --colour=auto wdiff'
+alias dig='grc --colour=auto dig'
+alias cat='grc --colour=auto cat'
+alias zcat='grc --colour=auto zcat'
 alias make='grc --colour=auto make'
-alias ll='grc --colour=auto ls -laFh --color=always'
-alias l = 'grc --colour=auto ls -CF --color=always'
+alias gcc='grc --colour=auto gcc'
+alias g++='grc --colour=auto g++'
+alias head='grc --colour=auto head'
+alias mount='grc --colour=auto mount'
+alias ps='grc --colour=auto ps'
+alias mtr='grc --colour=auto mtr'
+alias zgrep='grc --colour=auto zgrep'
+alias ll='grc --colour=auto ls -laFh --color=always'  
+alias l='grc --colour=auto ls -CF --color=always'
 
 # admin tooling
 alias tcp='netstat -ltupn' # list open tcp port without sudo
