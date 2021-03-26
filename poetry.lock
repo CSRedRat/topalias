@@ -136,6 +136,19 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "cachy"
+version = "0.3.0"
+description = "Cachy provides a simple yet effective caching library."
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.extras]
+redis = ["redis (>=3.3.6,<4.0.0)"]
+memcached = ["python-memcached (>=1.59,<2.0)"]
+msgpack = ["msgpack-python (>=0.5,<0.6)"]
+
+[[package]]
 name = "certifi"
 version = "2020.12.5"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -688,7 +701,7 @@ python-versions = "*"
 
 [[package]]
 name = "nitpick"
-version = "0.25.0"
+version = "0.26.0"
 description = "Enforce the same configuration across multiple projects"
 category = "dev"
 optional = false
@@ -697,6 +710,7 @@ python-versions = ">=3.6,<4.0"
 [package.dependencies]
 attrs = "*"
 autorepr = "*"
+cachy = "*"
 click = "*"
 ConfigUpdater = "*"
 dictdiffer = "*"
@@ -717,8 +731,8 @@ toml = "*"
 tomlkit = "*"
 
 [package.extras]
+test = ["freezegun", "pytest-cov", "pytest", "responses", "testfixtures"]
 lint = ["pylint"]
-test = ["pytest-cov", "pytest", "responses", "testfixtures"]
 doc = ["sphinx", "sphinx-rtd-theme", "sphobjinv"]
 
 [[package]]
@@ -1351,7 +1365,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "e3b3c69f6abcb6c45f3735673d1e6b219c8a59d5bf2fa5212d7dd5978ab1b1e0"
+content-hash = "f0621fa8d5608ee9a57ac525b26e9fed6c2b29aaed67605b16a4e3b1b35ba806"
 
 [metadata.files]
 alabaster = [
@@ -1402,6 +1416,10 @@ black = [
 bump2version = [
     {file = "bump2version-1.0.1-py2.py3-none-any.whl", hash = "sha256:37f927ea17cde7ae2d7baf832f8e80ce3777624554a653006c9144f8017fe410"},
     {file = "bump2version-1.0.1.tar.gz", hash = "sha256:762cb2bfad61f4ec8e2bdf452c7c267416f8c70dd9ecb1653fd0bbb01fa936e6"},
+]
+cachy = [
+    {file = "cachy-0.3.0-py2.py3-none-any.whl", hash = "sha256:338ca09c8860e76b275aff52374330efedc4d5a5e45dc1c5b539c1ead0786fe7"},
+    {file = "cachy-0.3.0.tar.gz", hash = "sha256:186581f4ceb42a0bbe040c407da73c14092379b1e4c0e327fdb72ae4a9b269b1"},
 ]
 certifi = [
     {file = "certifi-2020.12.5-py2.py3-none-any.whl", hash = "sha256:719a74fb9e33b9bd44cc7f3a8d94bc35e4049deebe19ba7d8e108280cfd59830"},
@@ -1722,8 +1740,8 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
 nitpick = [
-    {file = "nitpick-0.25.0-py3-none-any.whl", hash = "sha256:9b395c7728865352a48d3e6f056255cc3058b4381b0b67b0ea04b2a409715c5b"},
-    {file = "nitpick-0.25.0.tar.gz", hash = "sha256:f5b4fb770f500aecf1e739f876c3dc70143dfc5207b3e991d5a67d739aa8ce9f"},
+    {file = "nitpick-0.26.0-py3-none-any.whl", hash = "sha256:f5cfcd68f83910ce8a4cd998804a4e15dfd5a9a54a3cb4e201f1ec4bee67fe89"},
+    {file = "nitpick-0.26.0.tar.gz", hash = "sha256:b11009c77975990d7776ea6d307ed4272f5122e83b2fc16a6bad557222b6d809"},
 ]
 nodeenv = [
     {file = "nodeenv-1.5.0-py2.py3-none-any.whl", hash = "sha256:5304d424c529c997bc888453aeaa6362d242b6b4631e90f3d4bf1b290f1c84a9"},

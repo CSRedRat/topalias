@@ -51,7 +51,7 @@ bump2version = "^1.0.1"
 
 wemake-python-styleguide = "^0.15"
 flake8-pytest-style = "^1.4"
-nitpick = "^0.25"
+nitpick = "^0.26"
 
 safety = "^1.9"
 
