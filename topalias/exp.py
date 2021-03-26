@@ -24,3 +24,8 @@ def get_version(url=TOPALIAS_PYPI_LATEST_VERSION):
             if not ver.is_prerelease:
                 version = max(version, ver)
     return version
+
+
+print(
+    f"Latest release: {get_version()} on https://pypi.org/project/topalias/\n",
+)
