@@ -57,13 +57,6 @@ def test_print_all_hint(capsys):
     assert "Hint (secure)" in captured.out
 
 
-def test_print_history(capsys):
-    """Test print history"""
-    aliascore.print_history(1)
-    captured = capsys.readouterr()
-    assert "executed count:" in captured.out
-
-
 def test_command_line_interface():
     """Test the CLI."""
     runner = CliRunner()
