@@ -9,6 +9,7 @@ import click
 import aliascore as core
 
 from __init__ import __version__
+from __init__ import get_version
 
 
 class AliasedGroup(click.Group):
@@ -27,6 +28,10 @@ def print_version(ctx, ver):
     if not ver or ctx.resilient_parsing:
         return
     click.echo("topalias utility version: {}".format(__version__))
+    if ctx.obj["DEBUG"]:
+        click.echo(
+            f"Latest release: {get_version()} on https://pypi.org/project/topalias/\n",
+        )
     click.echo("Update command:\npip3 install -U --user topalias")
     ctx.exit()
 
