@@ -9,7 +9,7 @@ import click
 import aliascore as core
 
 from __init__ import __version__
-from __init__ import get_version
+from exp import get_version
 
 
 class AliasedGroup(click.Group):
